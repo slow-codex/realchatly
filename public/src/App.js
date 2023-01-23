@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./pages/Register";
 import Chat from "./pages/Chat";
 import Login from "./pages/Login";
-import setAvater from "./pages/setAvatar";
+import SetAvater from "./pages/setAvatar";
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/setAvatar" element={<setAvater />} />
+        <Route path="/setAvatar" element={<SetAvater />} />
         <Route path="/" element={<Chat />} />
       </Routes>
     </BrowserRouter>
