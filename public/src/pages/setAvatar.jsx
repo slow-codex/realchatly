@@ -21,10 +21,10 @@ const SetAvatar = () => {
     theme: "dark",
   };
 
-  //   useEffect(async () => {
-  //     if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
-  //       navigate("/login");
-  //   }, []);
+  useEffect(async () => {
+    if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
+      navigate("/login");
+  }, []);
 
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
