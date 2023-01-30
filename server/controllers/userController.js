@@ -1,5 +1,5 @@
 const User = require("../models/userModel");
-const bcrypt = require("bcrypt"); // For emcryption of the password
+const bcrypt = require("bcrypt");
 
 module.exports.login = async (req, res, next) => {
   try {
@@ -63,14 +63,22 @@ module.exports.setAvatar = async (req, res, next) => {
         isAvatarImageSet: true,
         avatarImage,
       },
-      {
-        new: true,
-      }
+      { new: true }
     );
     return res.json({
       isSet: userData.isAvatarImageSet,
       image: userData.avatarImage,
     });
+  } catch (ex) {
+    next(ex);
+  }
+};
+
+module.exports.logOut = (req, res, next) => {
+  try {
+    if (!req.params.id) return res.json({ msg: "User id is required " });
+    onlineUsers.delete(req.params.id);
+    return res.status(200).send();
   } catch (ex) {
     next(ex);
   }

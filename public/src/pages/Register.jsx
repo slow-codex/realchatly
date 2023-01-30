@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { registerRoute } from "../utils/APIRoutes";
 
-const Register = () => {
+export default function Register() {
   const navigate = useNavigate();
   const toastOptions = {
     position: "bottom-right",
@@ -70,6 +70,7 @@ const Register = () => {
         email,
         password,
       });
+
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
@@ -89,7 +90,7 @@ const Register = () => {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>Chatly</h1>
+            <h1>snappy</h1>
           </div>
           <input
             type="text"
@@ -124,9 +125,7 @@ const Register = () => {
       <ToastContainer />
     </>
   );
-};
-
-export default Register;
+}
 
 const FormContainer = styled.div`
   height: 100vh;

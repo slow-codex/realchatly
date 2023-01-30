@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { loginRoute } from "../utils/APIRoutes";
 
-const Login = () => {
+export default function Login() {
   const navigate = useNavigate();
   const [values, setValues] = useState({ username: "", password: "" });
   const toastOptions = {
@@ -67,7 +67,7 @@ const Login = () => {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>Chatly</h1>
+            <h1>snappy</h1>
           </div>
           <input
             type="text"
@@ -91,7 +91,7 @@ const Login = () => {
       <ToastContainer />
     </>
   );
-};
+}
 
 const FormContainer = styled.div`
   height: 100vh;
@@ -161,5 +161,3 @@ const FormContainer = styled.div`
     }
   }
 `;
-
-export default Login;
