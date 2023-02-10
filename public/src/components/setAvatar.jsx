@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
-const SetAvatar = () => {
+export default function SetAvatar() {
   const api = `https://api.multiavatar.com/4645646`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
@@ -101,7 +101,7 @@ const SetAvatar = () => {
       )}
     </>
   );
-};
+}
 
 const Container = styled.div`
   display: flex;
@@ -158,5 +158,3 @@ const Container = styled.div`
     }
   }
 `;
-
-export default SetAvatar;

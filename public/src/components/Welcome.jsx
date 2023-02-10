@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Robot from "../assets/robot.gif";
-const Welcome = () => {
+export default function Welcome() {
   const [userName, setUserName] = useState("");
   useEffect(async () => {
     setUserName(
@@ -19,7 +19,7 @@ const Welcome = () => {
       <h3>Please select a chat to Start messaging.</h3>
     </Container>
   );
-};
+}
 
 const Container = styled.div`
   display: flex;
@@ -34,5 +34,3 @@ const Container = styled.div`
     color: #4e0eff;
   }
 `;
-
-export default Welcome;
